@@ -1,0 +1,37 @@
+\documentclass[11pt]{article}
+\usepackage[cache=false]{minted}
+\usepackage{hyperref}
+
+
+\usepackage{tcolorbox}
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{minted}%
+     {\begin{tcolorbox}}%
+\AfterEndEnvironment{minted}
+   {\end{tcolorbox}}%
+
+
+\title{Algorithms}
+
+\begin{document}
+\maketitle
+
+\section{Sliding Widow Technique}
+\subsection{Count distinct elements in every window of size k}
+Tag: Sliding Window Technique, Hashtable. 
+See \footnote{https://www.geeksforgeeks.org/count-distinct-elements-in-every-window-of-size-k/}.
+
+\begin{minted}[xleftmargin=20pt]{bash}
+Input:  arr[] = {1, 2, 1, 3, 4, 2, 3}, k = 4
+Output: [3, 4, 4, 3]
+\end{minted}
+
+We use the sliding window to update a hashtable, which maintains the distinct elements. And the time complexity is $O(n)$.
+
+\inputminted{python}{src/distinct.py}
+
+\subsection{Sliding Window Maximum (Maximum of all subarrays of size k)}
+
+\inputminted{python}{src/maxSlidingWindow.py}
+	
+\end{document}
