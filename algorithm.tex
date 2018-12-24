@@ -32,6 +32,50 @@ We use the sliding window to update a hashtable, which maintains the distinct el
 
 \subsection{Sliding Window Maximum (Maximum of all subarrays of size k)}
 
+See \footnote{https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/}.
+\begin{minted}[xleftmargin=20pt]{bash}
+Input :
+arr[] = {1, 2, 3, 1, 4, 5, 2, 3, 6}
+k = 3
+Output :
+3 3 4 5 5 5 6
+
+Input :
+arr[] = {8, 5, 10, 7, 9, 4, 15, 12, 90, 13}
+k = 4
+Output :
+10 10 10 15 15 90 90
+\end{minted}
+
+We use the priority queue to .
+
 \inputminted{python}{src/maxSlidingWindow.py}
+
+\section{Heap}
+Heap can be viewed as a complete tree, but stored as the array. 
+Suppose the current node's index is $idx$, then the left child's index is $2*idx+1$, and the right child $2*idx+2$, while the parent $floor((idx-1)/2)$.
+
+We take the binary max heap as an example. 
+The basic external function is \textbf{insert} and \textbf{extractMax}, which is implemented by \textbf{siftup} and \textbf{siftdown}. 
+The \textbf{siftup} function check the current node's value with its parent's value, then swap them if the current node's value is bigger than the parent's, and do the check-swap operation recursively to meet the guarantee 
+	of the binary max heap.
 	
+The python source code is as following.
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/heap.py}
+
+\subsection{Python's heapq}
+We can use the library \textbf{heapq} in python. 
+Since the default \textbf{heapq} is the min heap, so we need a trick to reimplement \textbf{MaxHeap} by overriding the comparison function. 
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/heap_heapq.py}
+
+Or we can implement \textbf{MaxHeap} by multiplying -1 to each item in an array directly when using \textbf{heapq}.
+
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/heap_heapq2.py}
+
+All the above three heap codes generate the following output. 
+\begin{minted}[breaklines=true]{bash}
+After inserting 1,2,3,4,5,6,7,8,9, the array of the heap is 9 8 6 7 3 2 5 1 4 .
+Pop out from the heap, we'll get the maximum number 9, and the array of the heap becomes 8 7 6 4 3 2 5 1 .
+\end{minted}
+
 \end{document}
