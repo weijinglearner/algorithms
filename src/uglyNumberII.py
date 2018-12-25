@@ -1,4 +1,7 @@
 class Solution(object):
+    '''
+    2018-12-25
+    '''
     def nthUglyNumber(self, n):
         """
         :type n: int

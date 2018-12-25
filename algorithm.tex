@@ -196,6 +196,9 @@ We handle it by updating them simultaneously as the following code.
 
 \inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/uglyNumberII.py}
 
+If we want to save the space of $l_2$, $l_3$, and $l_5$, then we'll do not claim space for them but use the space of $F$ only by maintaining the pointers in these three lists. The code is as following.
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/uglyNumberII_singleList.py}
+
 %\begin{equation}
 %	\begin{aligned}
 %		F(n)=
