@@ -156,6 +156,7 @@ The line 18 to line 19 in the code can be optimized as the following code withou
 primeFlags[2*p:n:p] = [False]*len(primeFlags[2*p:n:p])	
 \end{minted}
 
+By eliminating the inner loop, the time consumption is reduced from 860ms to 304ms. 
 
 \subsubsection{Ugly Number (LeetCode 263)}
 Write a program to check whether a given number is an ugly number.
