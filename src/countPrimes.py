@@ -2,6 +2,7 @@ import math
 
 class Solution(object):
     '''2018-12-15
+    This is an O(n logn) solution.
     '''
     def countPrimes(self, n):
         """
@@ -17,7 +18,7 @@ class Solution(object):
         
         for p in range(2,int(math.sqrt(n))+1):
             if(primeFlags[p]==True):
-                for multiplier in range(2,n//p+1):
+                for multiplier in range(p,n//p+1):
                     primeFlags[p*multiplier]=False
         return sum(primeFlags[:-1])
 
