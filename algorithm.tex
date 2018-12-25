@@ -16,6 +16,11 @@
 \begin{document}
 \maketitle
 
+\section{Linked List}
+We can use array to initialize the linked list as the following code.
+While building up the linked list from the given array, we use the \textbf{two-pointer technique} to maintain the linking between two nodes.
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/linkedlist.py}
+
 \section{Sliding Widow Technique}
 \subsection{Count distinct elements in every window of size k}
 Tag: Sliding Window Technique, Hashtable. 
@@ -77,5 +82,23 @@ All the above three heap codes generate the following output.
 After inserting 1,2,3,4,5,6,7,8,9, the array of the heap is 9 8 6 7 3 2 5 1 4 .
 Pop out from the heap, we'll get the maximum number 9, and the array of the heap becomes 8 7 6 4 3 2 5 1 .
 \end{minted}
+
+\subsection{The application of heap}
+\subsubsection{Merge k Sorted Lists}
+Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity\footnote{https://leetcode.com/problems/merge-k-sorted-lists/description/}.
+
+\begin{minted}[xleftmargin=20pt]{bash}
+Input:
+[
+  1->4->5,
+  1->3->4,
+  2->6
+]
+Output: 1->1->2->3->4->4->5->6
+\end{minted}
+
+
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/mergeKSortedLists.py}
+
 
 \end{document}
