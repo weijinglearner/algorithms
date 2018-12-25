@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[cache=false]{minted}
+\usepackage{amsmath} %used for maths and "aligned" in equation
 \usepackage{hyperref}
 
 
@@ -100,5 +101,78 @@ Output: 1->1->2->3->4->4->5->6
 
 \inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/mergeKSortedLists.py}
 
+\section{Dynamic Programming}
+\subsection{Ugly Number II (LeetCode 264)}
+Write a program to find the n-th ugly number. 
+Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. 
+Example:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input: n = 10
+Output: 12
+Explanation: 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly numbers.
+\end{minted}
+Note:  
+\begin{enumerate}
+\item 1 is typically treated as an ugly number.
+\item n does not exceed 1690.
+\end{enumerate}
+
+Tag: Dynamic Programming.
+
+We use the tabulation dynamic programming to compute n-th ugly number based on the previous ugly numbers. 
+The recursive formula is defined as following.
+\begin{equation}
+	\begin{aligned}
+		F(n)=
+		\left\{ \begin{aligned}
+		1 &, n=1 & (a)\\
+		2 &, n=2 & (b)\\
+		3 &, n=3 & (c)\\
+		4 &, n=4 & (d)\\
+		5 &, n=5 & (e)\\
+		min\{2*F(n-3), 3*F(n-3), 5*F(n-3)\} &, n>5 & (f)
+		\end{aligned}\right.
+	\end{aligned}
+\end{equation}
+
+\section{Maths}
+\subsection{Prime numbers}
+\subsubsection{Ugly Number (LeetCode 263)}
+Write a program to check whether a given number is an ugly number.
+
+Ugly numbers are positive numbers whose prime factors only include 2, 3, 5.
+
+Example 1:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input: 6
+Output: true
+Explanation: 6 = 2 * 3
+\end{minted}
+
+Example 2:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input: 8
+Output: true
+Explanation: 8 = 2 * 2 * 2
+\end{minted}
+
+Example 3:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input: 14
+Output: false 
+Explanation: 14 is not ugly since it includes another prime factor 7.
+\end{minted}
+
+Note:
+\begin{enumerate}
+	\item 1 is typically treated as an ugly number.
+	\item Input is within the 32-bit signed integer range: [$-2^{31}$, $2^{31}-1$].
+\end{enumerate}
+
+We use the while loop to do the check and the decomposition for a given number. Since the given number is within the range [$-2^{31}$, $2^{31}-1$], so we can do the check and the decomposition by recursion without worrying about the stack overflow (exceeding the maximum recursion depth). 
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/isUgly.py}
+
+The recursion version is as following. 
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/isUgly_recursion.py}
 
 \end{document}
