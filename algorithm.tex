@@ -137,6 +137,26 @@ The recursive formula is defined as following.
 
 \section{Maths}
 \subsection{Prime numbers}
+\subsection{Count Primes (LeetCode 204)}
+Count the number of prime numbers \textbf{less than} a non-negative number, n.
+Example:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input: 10
+Output: 4
+Explanation: There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
+\end{minted}
+
+Tag: Primes.
+
+We use the \textbf{Sieve of Eratosthenes} to label each number within the array of $[1, \cdots, n]$ is a prime or not.
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/countPrimes.py}
+
+The line 18 to line 19 in the code can be optimized as the following code without the time consumption on the loop. 
+\begin{minted}[breaklines=true, xleftmargin=20pt]{python}
+primeFlags[2*p:n:p] = [False]*len(primeFlags[2*p:n:p])	
+\end{minted}
+
+
 \subsubsection{Ugly Number (LeetCode 263)}
 Write a program to check whether a given number is an ugly number.
 
