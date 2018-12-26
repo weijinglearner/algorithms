@@ -17,6 +17,8 @@
 \begin{document}
 \maketitle
 
+\tableofcontents
+
 \section{Linked List}
 We can use array to initialize the linked list as the following code.
 While building up the linked list from the given array, we use the \textbf{two-pointer technique} to maintain the linking between two nodes.
@@ -100,6 +102,39 @@ Output: 1->1->2->3->4->4->5->6
 
 
 \inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/mergeKSortedLists.py}
+
+\subsubsection{Kth Largest Element in a Stream (LeetCode 703)}
+Design a class to find the kth largest element in a stream. Note that it is the kth largest element in the sorted order, not the kth distinct element.
+
+Your KthLargest class will have a constructor which accepts an integer k and an integer array nums, which contains initial elements from the stream. For each call to the method KthLargest.add, return the element representing the kth largest element in the stream.
+
+Example:
+\begin{minted}[xleftmargin=20pt]{bash}
+int k = 3;
+int[] arr = [4,5,8,2];
+KthLargest kthLargest = new KthLargest(3, arr);
+kthLargest.add(3);   // returns 4
+kthLargest.add(5);   // returns 5
+kthLargest.add(10);  // returns 5
+kthLargest.add(9);   // returns 8
+kthLargest.add(4);   // returns 8
+\end{minted}
+
+Note: 
+\begin{enumerate}
+	\item You may assume that nums' length $\geq k-1$  and $k \geq 1$.
+\end{enumerate}
+
+We use the min heap with the fixed size k to maintain the largest k elements in the stream. 
+The minimum element in the min heap with size k will be the k-th largest element in a stream. 
+The initialization of the heap is to heapify the given array.
+Since the time complexity of the operation of "heapify" is $O(n)$\footnote{https://www.growingwiththeweb.com/data-structures/binary-heap/build-heap-proof/}, so the initialization is very efficient. 
+And the add operation in the following code is to pop out the minimum element in the array which costs $O(\log k)$. 
+In general, the time complexity is $O(n\log k)$, where $n$ is the size of the stream, and the space complexity is $O(\log k)$. 
+
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/kthLargestInStream.py}
+
+
 
 \section{Dynamic Programming}
 
