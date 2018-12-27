@@ -1,8 +1,10 @@
 import heapq
+import collections
 
 class Solution(object):
     '''
     2018-12-27
+    min heap method
     '''
     def topKFrequent(self, nums, k):
         """
@@ -12,12 +14,9 @@ class Solution(object):
         """
         #firstly, count the frequent. 
         #The time complexity is O(n).
-        numfreq=dict()
+        numfreq=collections.defaultdict(int)
         for num in nums:
-            if(num not in numfreq):
-                numfreq[num]=1
-            else:
-                numfreq[num]+=1
+            numfreq[num]+=1
         
         #secondly, use the min heap with 
         #the fixed size k to get the top k frequent

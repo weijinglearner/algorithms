@@ -158,10 +158,19 @@ Note:
 \end{enumerate}
 
 %TODO Top K Frequent Elements
-We use the max heap with the fixed size k to maintain the top k frequent elements. 
+There are two solutions for this problem: \textbf{min heap} and \textbf{max heap}. 
+As the first solution, we use the \textbf{min heap} with the fixed size k to maintain the top k frequent elements, which is inspired by the problem \textbf{Kth Largest Element in an Array}.
+Taking the counting frequent, heapifying the frequent-num array, and popping out the results into consideration, the time complexity is $O(n)+O(k+(n-k)\log k)+O(k \log k)$. 
+So if $n \gg k$, the overall time complexity is $O(n \log k)$, but if $ n \approx k$, the overall time complexity is $O(n \log n)$.
+
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/topKFrequent.py}
+
+As the second solution, we use the \textbf{max heap} to heapify the frequent-num tuples to a heap with the size $n$. 
+Then we pop out the first $k$ elements in the max heap, which will be the result. Similar as the analysis on the min heap method, taking the counting frequent, heapifying the frequent-num array, and popping out the results into consideration, the time complexity is $O(n)+O(n)+O(k \log n)$. 
+So if $n \gg k$, the overall time complexity is $O(n+k \log n)$ ($\approx O(n)$), but if $ n \approx k$, the overall time complexity is $O(n \log n)$.
 
 
-
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/topKFrequent_maxHeap.py}
 
 
 \section{Dynamic Programming}
