@@ -172,6 +172,56 @@ So if $n \gg k$, the overall time complexity is $O(n+k \log n)$ ($\approx O(n)$)
 
 \inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/topKFrequent_maxHeap.py}
 
+\section{Sorting}
+\subsection{Sort Characters By Frequency (LeetCode 451)}
+Given a string, sort it in decreasing order based on the frequency of characters.
+
+Example 1:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input:
+"tree"
+
+Output:
+"eert"
+
+Explanation:
+'e' appears twice while 'r' and 't' both appear once.
+So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
+\end{minted}
+
+
+Example 2:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input:
+"cccaaa"
+
+Output:
+"cccaaa"
+
+Explanation:
+Both 'c' and 'a' appear three times, so "aaaccc" is also a valid answer.
+Note that "cacaca" is incorrect, as the same characters must be together.
+\end{minted}
+
+
+Example 3:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input:
+"Aabb"
+
+Output:
+"bbAa"
+
+Explanation:
+"bbaA" is also a valid answer, but "Aabb" is incorrect.
+Note that 'A' and 'a' are treated as two different characters.
+\end{minted}
+
+This problem is not difficult. 
+But we still should pay attention to the potential TLE problem may caused by the combination of string in python. 
+We cannot use "s=s+c" which time complexity is $O(n^2)$ and space complexity is also $O(n^2)$ since it needs deep copy for every adding operation.
+
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/frequencySort.py}
 
 \section{Dynamic Programming}
 
@@ -311,6 +361,21 @@ But this method is not optimized, which should be speeded up to $O(n log k)$.
 Think about the problem \textbf{Merging k Sorted Lists}, which is optimized by using the data structure heap. 
 
 \inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/nthSuperUglyNumber.py}
+
+\subsection{Permutation}
+\subsubsection{Next Permutation (LeetCode 31)}
+Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
+
+If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
+
+The replacement must be in-place and use only constant extra memory.
+
+Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+1,2,3 -> 1,3,2
+3,2,1 -> 1,2,3
+1,1,5 -> 1,5,1	
+\end{minted}
 
 
 \end{document}
