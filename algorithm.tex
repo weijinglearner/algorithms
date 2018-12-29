@@ -24,6 +24,28 @@ We can use array to initialize the linked list as the following code.
 While building up the linked list from the given array, we use the \textbf{two-pointer technique} to maintain the linking between two nodes.
 \inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/linkedlist.py}
 
+\section{Two Pointers Technique}
+%TODO Two Pointers Technique
+\subsection{Container With Most Water (LeetCode 11)}
+Given $n$ non-negative integers $a_1$, $a_2$, ..., $a_n$ , where each represents a point at coordinate $(i, a_i)$. 
+$n$ vertical lines are drawn such that the two endpoints of line $i$ is at $(i, a_i)$ and $(i, 0)$. 
+Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+
+Note: You may not slant the container and $n$ is at least 2.
+
+Example:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input: [1,8,6,2,5,4,8,3,7]
+Output: 49
+\end{minted}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=8cm]{pic/question_11.jpg}
+\caption{The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.}
+\end{figure}
+
+
 \section{Sliding Widow Technique}
 \subsection{Count distinct elements in every window of size k}
 Tag: Sliding Window Technique, Hashtable. 
@@ -157,7 +179,7 @@ Note:
 	\item Your algorithm's time complexity must be better than $O(n \log n)$, where n is the array's size.
 \end{enumerate}
 
-%TODO Top K Frequent Elements
+
 There are two solutions for this problem: \textbf{min heap} and \textbf{max heap}. 
 As the first solution, we use the \textbf{min heap} with the fixed size k to maintain the top k frequent elements, which is inspired by the problem \textbf{Kth Largest Element in an Array}.
 Taking the counting frequent, heapifying the frequent-num array, and popping out the results into consideration, the time complexity is $O(n)+O(k+(n-k)\log k)+O(k \log k)$. 
@@ -224,6 +246,37 @@ We cannot use "s=s+c" which time complexity is $O(n^2)$ and space complexity is 
 \inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/frequencySort.py}
 
 \section{Dynamic Programming}
+
+\subsection{Decode Ways (LeetCode 91)}
+A message containing letters from A-Z is being encoded to numbers using the following mapping:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+'A' -> 1
+'B' -> 2
+...
+'Z' -> 26	
+\end{minted}
+Given a non-empty string containing only digits, determine the total number of ways to decode it.
+
+Example 1:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input: "12"
+Output: 2
+Explanation: It could be decoded as "AB" (1 2) or "L" (12).
+\end{minted}
+
+Example 2:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input: "226"
+Output: 3
+Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
+\end{minted}
+
+Firstly we use the Backtracking to search all the possible decoding ways, but failed to solve the problem with the \textbf{Time Limited Error}. 
+The backtracking method is to decode the sequence like "1226..." in two ways: "1/226..." and "12/26...". 
+Suppose the length of the input is $n$, the backtracking method's time complexity is $O(2^n)$ in worst case. 
+A sequence of all one "$1 \cdots 1$" or all two "$2 \cdots 2$" are the worst cases. 
+
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/numDecodings.py}
 
 \section{Maths}
 \subsection{Prime numbers}
