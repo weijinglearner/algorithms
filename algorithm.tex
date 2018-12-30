@@ -200,6 +200,33 @@ So if $n \gg k$, the overall time complexity is $O(n+k \log n)$ ($\approx O(n)$)
 
 \section{Tree}
 
+\subsection{Univalued Binary Tree (LeetCode 965)}
+
+A binary tree is univalued if every node in the tree has the same value.
+
+Return true if and only if the given tree is univalued.
+
+Example 1:
+\begin{minted}[xleftmargin=20pt]{bash}
+Input: [1,1,1,1,1,null,1]
+Output: true
+\end{minted}
+
+Example 2:
+\begin{minted}[xleftmargin=20pt]{bash}
+Input: [2,2,2,5,2]
+Output: false
+\end{minted}
+
+Note:
+\begin{enumerate}
+	\item The number of nodes in the given tree will be in the range [1, 100].
+	\item Each node's value will be an integer in the range [0, 99].
+\end{enumerate}
+
+It's an easy problem. 
+We use the recursion to get the result.
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/isUnivalTree.py}
 
 
 \section{Sorting}
