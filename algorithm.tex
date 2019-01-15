@@ -455,6 +455,30 @@ Output: 2
 
 \inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/subarraySum.py}
 
+\subsection{Subarray Sums Divisible by K (LeetCode 974)}
+Given an array A of integers, return the number of (contiguous, non-empty) subarrays that have a sum divisible by K.
+
+Example 1:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input: A = [4,5,0,-2,-3,1], K = 5
+Output: 7
+Explanation: There are 7 subarrays with a sum divisible by K = 5:
+[4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]
+\end{minted}
+
+
+Note:
+\begin{enumerate}
+	\item $1 \leq \text{A.length} \leq 30000$
+	\item $-10000 \leq \text{A[i]} \leq 10000$
+	\item $2 \leq K \leq 10000$
+\end{enumerate}
+
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/subarraysDivByK.py}
+
+Or use the second solution as follows.
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/subarraysDivByK2.py}
+
 \section{Maths}
 \subsection{Prime numbers}
 \subsubsection{Count Primes (LeetCode 204)}
