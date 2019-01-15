@@ -405,6 +405,7 @@ Solution: Use Prefix Sum method and HashMap used in Two Sum problem.
 
 \inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/subarraySum0.py}
 
+The time complexity is $O(n)$.
 The output of the running above code is as follows. 
 Example:
 \begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
@@ -412,6 +413,32 @@ There are subarray in [4, 2, -3, 1, 6] such that its sum is 0, True or False? Tr
 There are subarray in [4, 2, 0, 1, 6] such that its sum is 0, True or False? True
 There are subarray in [-3, 2, 3, 1, 6] such that its sum is 0, True or False? False
 \end{minted}
+
+\subsection{Find the length of largest subarray with 0 sum}
+Given an array of integers, find length of the largest subarray with sum equals to 0.
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input: arr[] = {15, -2, 2, -8, 1, 7, 10, 23};
+Output: 5
+The largest subarray with 0 sum is -2, 2, -8, 1, 7
+
+Input: arr[] = {1, 2, 3}
+Output: 0
+There is no subarray with 0 sum
+
+Input: arr[] = {1, 0, 3}
+Output: 1
+\end{minted}
+
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/findLongestSubarraySum0.py}
+
+The time complexity is $O(n)$.
+The output of the running above code is as follows. 
+Example:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Length of the longest 0 sum subarray in [-3, 2, 3, 1, 6] is 0.
+Length of the longest 0 sum subarray in [15, -2, 2, -8, 1, 7, 10, 13] is 5.
+\end{minted}
+
 
 \section{Maths}
 \subsection{Prime numbers}

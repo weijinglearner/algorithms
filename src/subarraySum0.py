@@ -17,13 +17,13 @@ class Solution(object):
 
 
 a=Solution()
-print("There are subarray in %s such that its sum is 0,"
+print("There is a subarray in %s such that its sum is 0,"
       " True or False? %s" % ([4, 2, -3, 1, 6],
                            a.findSubarray([4, 2, -3, 1, 6])))
-print("There are subarray in %s such that its sum is 0,"
+print("There is a subarray in %s such that its sum is 0,"
       " True or False? %s" % ([4, 2, 0, 1, 6],
                            a.findSubarray([4, 2, 0, 1, 6])))
-print("There are subarray in %s such that its sum is 0,"
+print("There is a subarray in %s such that its sum is 0,"
       " True or False? %s" % ([-3, 2, 3, 1, 6],
                            a.findSubarray([-3, 2, 3, 1, 6])))
 
