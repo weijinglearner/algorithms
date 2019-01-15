@@ -439,6 +439,21 @@ Length of the longest 0 sum subarray in [-3, 2, 3, 1, 6] is 0.
 Length of the longest 0 sum subarray in [15, -2, 2, -8, 1, 7, 10, 13] is 5.
 \end{minted}
 
+\subsection{Subarray Sum Equals K (LeetCode 560)}
+Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.
+
+Example 1:
+\begin{minted}[breaklines=true, xleftmargin=20pt]{bash}
+Input:nums = [1,1,1], k = 2
+Output: 2	
+\end{minted}
+
+\begin{enumerate} 
+\item The length of the array is in range [1, 20,000].
+\item The range of numbers in the array is [-1000, 1000] and the range of the integer k is [-1e7, 1e7].	
+\end{enumerate}
+
+\inputminted[breaklines=true,frame=leftline, linenos=true]{python}{src/subarraySum.py}
 
 \section{Maths}
 \subsection{Prime numbers}
